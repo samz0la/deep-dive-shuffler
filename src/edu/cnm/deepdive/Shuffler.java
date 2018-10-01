@@ -21,7 +21,7 @@ public class Shuffler {
 
     String[] names = {"HI", "HELLO", "BONJOUR", "HOLA", "GUTEN TAG", "CIAO" };
     System.out.println(Arrays.toString(names));
-    shuffle(deck);
+    shuffle(names);
     System.out.println(Arrays.toString(names));
 
   }
