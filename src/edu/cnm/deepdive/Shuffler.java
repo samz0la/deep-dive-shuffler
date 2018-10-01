@@ -18,12 +18,16 @@ public class Shuffler {
     shuffle(deck);
     System.out.println(Arrays.toString(deck));
 
+
+    String[] names = {"HI", "HELLO", "BONJOUR", "HOLA", "GUTEN TAG", "CIAO" };
+    System.out.println(Arrays.toString(names));
+    shuffle(deck);
+    System.out.println(Arrays.toString(names));
+
   }
 
   public static void shuffle(int[] deck) {
     shuffle(deck, new Random());
-
-    //System.arraycopy(newRandom, 0, deck, 0, deck.length);
   }
 
   public static void shuffle(int[] deck, Random rng) {
@@ -87,7 +91,7 @@ public class Shuffler {
     shuffle(deck, new Random());
   }
 
-  public static void shuffle(long[] deck, Random rng) {
+   public static void shuffle(long[] deck, Random rng) {
     for (int i = deck.length - 1; i > 0; i--) {
       int swap = rng.nextInt(i + 1);
       long temp = deck[swap];
@@ -97,6 +101,33 @@ public class Shuffler {
   }
 
   public static void shuffle(long[] deck) {
+    shuffle(deck, new Random());
+  }
+
+  public static void shuffle(float[] deck, Random rng) {
+    for (int i = deck.length - 1; i > 0; i--) {
+      int swap = rng.nextInt(i + 1);
+      float temp = deck[swap];
+      deck[swap] = deck[i];
+      deck[i] = temp;
+    }
+  }
+
+  public static void shuffle(float[] deck) {
+    shuffle(deck, new Random());
+  }
+
+
+  public static <T> void shuffle(T[] deck, Random rng) {
+    for (int i = deck.length - 1; i > 0; i--) {
+      int swap = rng.nextInt(i + 1);
+      T temp = deck[swap];
+      deck[swap] = deck[i];
+      deck[i] = temp;
+    }
+  }
+
+  public static <T>void shuffle(T[] deck) {
     shuffle(deck, new Random());
   }
 }
